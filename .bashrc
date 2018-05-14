@@ -65,13 +65,6 @@ fi
 
 # Tab Completion Boost
 
-bind 'set show-all-if-ambiguous on'
-bind 'TAB:menu-complete'
-bind '"\e[Z":menu-complete-backward' # Shift tab
-bind "set menu-complete-display-prefix on"
-bind "set completion-ignore-case on"
-bind "set bell-style none"
-bind "set skip-completed-text on"
 
 
 #-------------------------------------------------------------------------
