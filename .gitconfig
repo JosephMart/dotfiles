@@ -1,4 +1,12 @@
 [user]
-	signingkey = 3A95618B92D7A565
+	signingkey = 64C31E1C0630B42C
 	email = joseph@martinsen.com
 	name = Joseph Martinsen
+[core]
+	excludesfile = /Users/josephmartinsen/.gitignore
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
