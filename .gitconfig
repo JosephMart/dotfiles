@@ -3,10 +3,60 @@
 	email = joseph@martinsen.com
 	name = Joseph Martinsen
 [core]
-	excludesfile = /Users/josephmartinsen/.gitignore
+	excludesfile = ~/.gitignore
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg2
 [commit]
 	gpgsign = true
 [tag]
 	forceSignAnnotated = true
+[commit]
+	# Show diff when preparing commit message
+	verbose = true
+	template = ~/.gitmessage
+[alias]
+	a = add
+	s = status
+	st = status
+	ci = commit
+	b = branch
+	co = checkout
+	re = remote
+	d = diff
+	dc = diff --cached
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lgi = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+	# Pull Upstream
+	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+	# Commit Amend Reuse Message HEAD
+	carmh = commit --amend --reuse-message=HEAD
+	# Push Current
+	pc = !"f() { remote=\"${1:-origin}\"; git push -u \"$remote\" $(git rev-parse --abbrev-ref HEAD); }; f"
+	# Push Current Force
+	pcf = !"f() { echo git pc \"$@\" -f; }; f"
+	# Mainly for YADM
+	untracked = !"f() { git status --porcelain=v1 -zunormal | xargs -0n1 printf \"%s\\n\" | grep -E '^\\?\\? \\.' | cut -c4-; }; f"
+
+	# Amend last commit
+	amend = commit --amend
+
+	# Ammend last commit with its original message
+	redo = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+
+	# Reset index changes, but not the working tree
+	undo = reset --mixed HEAD^
+
+	# Checkout to HEAD revision
+	discard = checkout --
+
+	# List of contributors and how many commits each person has.
+	contrib = shortlog -sn
+
+	# See how many lines of code you have written today.
+	today = diff --shortstat "@{0 day ago}"
+
+	# How many lines in repo
+	stat = !git ls-files | xargs wc -l
