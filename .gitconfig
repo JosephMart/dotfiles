@@ -46,6 +46,9 @@
 	# Ammend last commit with its original message
 	redo = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
 
+    # Delete branches that have been merged
+    cleanup = "!git branch --merged master | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+
 	# Reset index changes, but not the working tree
 	undo = reset --mixed HEAD^
 

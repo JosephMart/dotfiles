@@ -65,10 +65,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
   gitfast git-extras
   zsh-autosuggestions
-  colored-man
+  colored-man-pages
   colorize
   brew osx zsh-syntax-highlighting
-  docker
+  docker docker-compose
   npm node yarn
   python pip virtualenv
   vscode
@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -94,11 +94,8 @@ export LANG=en_US.UTF-8
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
