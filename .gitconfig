@@ -4,6 +4,7 @@
 	name = Joseph Martinsen
 [core]
 	excludesfile = ~/.gitignore
+	editor = nvim
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg2
 [commit]

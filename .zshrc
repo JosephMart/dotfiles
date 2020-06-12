@@ -63,16 +63,23 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  gitfast git-extras
+  gitfast
+  git-extras
   zsh-autosuggestions
   colored-man-pages
   colorize
-  brew osx zsh-syntax-highlighting
-  docker docker-compose
-  npm node yarn
-  python pip virtualenv
+  brew
+  osx
+  zsh-syntax-highlighting
+  docker
+  docker-compose
+  npm
+  node
+  yarn
+  python
+  pip
+  virtualenv
   vscode
-  wd copydir copyfile sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,13 +122,10 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export GO111MODULE=on
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export TERM="xterm-256color"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
+export PATH="/usr/local/sbin:$PATH"
