@@ -1,20 +1,22 @@
 [user]
-	signingkey = 64C31E1C0630B42C
-	email = joseph@martinsen.com
+	signingkey = 680099B1
+	email = josmarti@adobe.com
 	name = Joseph Martinsen
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
-[gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
-[commit]
-	gpgsign = true
+# [gpg]
+# 	program = /usr/local/MacGPG2/bin/gpg2
+# [commit]
+# 	gpgsign = true
 [tag]
 	forceSignAnnotated = true
+	gpgSign = true
 [commit]
 	# Show diff when preparing commit message
 	verbose = true
 	template = ~/.gitmessage
+	gpgSign = true
 [alias]
 	a = add
 	s = status
@@ -64,3 +66,5 @@
 
 	# How many lines in repo
 	stat = !git ls-files | xargs wc -l
+[push]
+	autoSetupRemote = true
